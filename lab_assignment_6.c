@@ -1,7 +1,16 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 
 int search(int numbers[], int low, int high, int value) 
 {
+	for(int i = low; i <= high; i++)
+	{
+		if (numbers[i] == value)
+		{
+			return i;
+		}
+	}
 	return -1;
 }
 
