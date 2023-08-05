@@ -4,7 +4,6 @@
 
 #define MAXNAME 26
 
-// Trie node structure
 struct TrieNode
 {
     struct TrieNode* children[MAXNAME];
@@ -24,7 +23,6 @@ struct TrieNode* createnode()
     return newNode;
 }
 
-// Inserts the word into the trie structure
 void insert(struct TrieNode* root, char* word)
 {
     struct TrieNode* node = root;
@@ -39,7 +37,6 @@ void insert(struct TrieNode* root, char* word)
     node->count++;
 }
 
-// Computes the number of occurrences of the word
 int numberOfOccurrences(struct TrieNode* root, char* word)
 {
     struct TrieNode* node = root;
@@ -54,7 +51,6 @@ int numberOfOccurrences(struct TrieNode* root, char* word)
     return node->count;
 }
 
-// Deallocates the trie structure
 void deallocateTrie(struct TrieNode* root)
 {
     if (root == NULL)
@@ -69,7 +65,6 @@ void deallocateTrie(struct TrieNode* root)
     free(root);
 }
 
-// Initializes a trie structure
 struct TrieNode* createTrie()
 {
     return createnode();
